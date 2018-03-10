@@ -25,4 +25,4 @@ rotate the input matrix in-place such that it becomes:
 时间复杂度:O(2n)
 
 ## 结果
-beats 100%
+68ms

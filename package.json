@@ -2,6 +2,7 @@
   "name": "leetcode",
   "version": "1.0.0",
   "scripts": {
+    "start-new-solution": "./scripts/startNewSolution.js",
     "test": "mocha ./scripts/runTestCases.js"
   },
   "dependencies": {

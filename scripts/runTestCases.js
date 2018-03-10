@@ -10,9 +10,6 @@ const getTestProblemNum = () => {
   let problemNum = process.argv[process.argv.length - 1];
   if (/[0-9]+/.test(problemNum)) {
     const len = problemNum.length;
-    for (let i = 0; i < 3 - len; ++i) {
-      problemNum = '0' + problemNum;
-    }
     return problemNum;
   } else {
     return '';
@@ -24,7 +21,7 @@ const testGenerator = pending => {
     (pending ? xit : it) (description, func);
   };
 };
-
+//针对无返回值,仅修改传入参数的测试
 const testMutateInput = (pending, program, input, output) => testGenerator(pending)(
   `Input: ${JSON.stringify(input).slice(0, 66)}\tshould be modified to\tOutput: ${JSON.stringify(output)}`,
   () => {
@@ -32,12 +29,12 @@ const testMutateInput = (pending, program, input, output) => testGenerator(pendi
     expect(input).to.deep.equal(output);
   }
 );
-
+//针对使用函数的测试
 const testByFunc = (pending, func, input, output) => testGenerator(pending)(
   `Func: ${func.name}\nInput: ${(JSON.stringify(input) || '').slice(0, 66)}\t Output: ${JSON.stringify(output)}`,
   () => expect(func(...input)).to.deep.equal(output)
 );
-
+//普通有返回值的测试
 const testInput = (pending, program, input, output) => testGenerator(pending)(
   `Input: ${JSON.stringify(input).slice(0, 66)}\t Output: ${JSON.stringify(output)}`,
   () => expect(program(...input)).to.deep.equal(output)
