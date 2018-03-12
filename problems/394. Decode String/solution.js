@@ -29,3 +29,4 @@ var decodeString = function (s) {
     }
     return stackStr[0]
 };
+module.exports = decodeString
