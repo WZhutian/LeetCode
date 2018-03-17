@@ -10,6 +10,9 @@ const getTestProblemNum = () => {
   let problemNum = process.argv[process.argv.length - 1];
   if (/[0-9]+/.test(problemNum)) {
     const len = problemNum.length;
+    for (let i = 0; i < 3 - len; ++i) {
+      problemNum = '0' + problemNum;
+    }
     return problemNum;
   } else {
     return '';
