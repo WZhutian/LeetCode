@@ -10,6 +10,6 @@ Your function should return length = 2, with the first two elements of nums bein
 ```
 ## 解题思路
 
-
+这题是要求删掉等于val的数后,修改当前数组(实际返回数组长度),关键在于如何做到不使用额外的空间
 
 ## 结果
