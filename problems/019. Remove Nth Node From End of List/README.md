@@ -10,6 +10,6 @@ After removing the second node from the end, the linked list becomes 1->2->3->5.
 ```
 ## 解题思路
 
-
+保存n个之前的节点
 
 ## 结果
