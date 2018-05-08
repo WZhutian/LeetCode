@@ -4,7 +4,7 @@
   "scripts": {
     "start-new-solution": "./scripts/startNewSolution.js",
     "test": "mocha ./scripts/runTestCases.js",
-    "get-code":"node ./scripts/getCode.js"
+    "get-code": "node ./scripts/getCode.js"
   },
   "dependencies": {
     "chai": "^4.1.2",
